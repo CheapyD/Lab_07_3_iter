@@ -5,7 +5,6 @@
 using namespace std;
 
 void Create(int** a, const int rowCount, const int colCount, const int Low, const int High);
-void Input(int** a, const int rowCount, const int colCount);
 void Print(int** a, const int rowCount, const int colCount);
 void PrintModify(int* f, const int j);
 bool Part1_Count(int** a, const int rowCount, const int colCount, int& count);
@@ -30,7 +29,6 @@ int main()
 	int k = colCount; 
 
 	Create(a, rowCount, colCount, Low, High);
-	//Input(a, rowCount, colCount);
 	Print(a, rowCount, colCount);
 
 	int count_rows = 0;
@@ -71,19 +69,6 @@ void Create(int** a, const int rowCount, const int colCount, const int Low,
 	for (int i = 0; i < rowCount; i++)
 		for (int j = 0; j < colCount; j++)
 			a[i][j] = Low + rand() % (High - Low + 1);
-}
-
-void Input(int** a, const int rowCount, const int colCount)
-{
-	for (int i = 0; i < rowCount; i++)
-	{
-		for (int j = 0; j < colCount; j++)
-		{
-			cout << "a[" << i << "][" << j << "] = ";
-			cin >> a[i][j];
-		}
-		cout << endl;
-	}
 }
 
 void Print(int** a, const int rowCount, const int colCount)
